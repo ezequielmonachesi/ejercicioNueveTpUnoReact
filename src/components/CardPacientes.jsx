@@ -1,6 +1,6 @@
 import { Button, Card, Col } from "react-bootstrap";
 
-const CardPacientes = ({objeto}) => {
+const CardPacientes = ({objeto, borrarTurno}) => {
   return (
     <>
       <Col xs md="3">
@@ -15,7 +15,7 @@ const CardPacientes = ({objeto}) => {
             <p>Sintomas: {objeto.sintoma}</p>
           </Card.Body>
           <Card.Footer>
-            <Button variant="danger">Borrar</Button>
+            <Button variant="danger" onClick={()=>borrarTurno(objeto.hora)}>Borrar</Button>
           </Card.Footer>
         </Card>
       </Col>

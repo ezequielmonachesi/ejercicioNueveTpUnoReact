@@ -12,6 +12,11 @@ const CardFormulario = () => {
 
   const [formularios, setFormularios] = useState(JSON.parse(localStorage.getItem('formularios')) || []);
 
+  const borrarTurno = (hora) => {
+    let copiaFormulario = formularios.filter((elemento) => elemento.hora !== hora);
+    setFormularios(copiaFormulario);
+  }
+
   useEffect(()=>{
     localStorage.setItem('formularios', JSON.stringify(formularios));
   })
@@ -128,7 +133,7 @@ const CardFormulario = () => {
           </Form>
         </Card.Body>
       </Card>
-      <RowCards pacientes={formularios}></RowCards>
+      <RowCards pacientes={formularios} borrarTurno={borrarTurno}></RowCards>
     </>
   );
 };

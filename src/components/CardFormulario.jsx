@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 
-const Formulario = () => {
+const CardFormulario = () => {
     return (
         <>
         <Card.Header>Llenar formulario para crear cita</Card.Header>
@@ -14,4 +14,4 @@ const Formulario = () => {
     );
 };
 
-export default Formulario;
+export default CardFormulario;

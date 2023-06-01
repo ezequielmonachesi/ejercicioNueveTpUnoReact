@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import RowCards from "./RowCards";
@@ -10,21 +10,21 @@ const CardFormulario = () => {
     handleSubmit,
   } = useForm();
 
-  const [formularios, setFormularios] = useState([{}]);
+  const [formularios, setFormularios] = useState(JSON.parse(localStorage.getItem('formularios')) || []);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    alert("Datos Enviados");
-    setFormularios([...formularios, data]);
-    console.log(formularios);
-  };
+  useEffect(()=>{
+    localStorage.setItem('formularios', JSON.stringify(formularios));
+  })
 
   return (
     <>
       <Card className="mx-lg-5">
         <Card.Header>Llenar formulario para crear cita</Card.Header>
         <Card.Body>
-          <Form onSubmit={handleSubmit(onSubmit)} className="mx-3 mt-3 py-3">
+          <Form onSubmit={handleSubmit((data)=>
+            setFormularios([...formularios, data])
+            )
+            } className="mx-3 mt-3 py-3">
             <div className="d-flex flex-wrap justify-content-start">
               <Form.Group className="mb-3 me-3" controlId="nombre">
                 <Form.Label>Nombre de mascota</Form.Label>
@@ -128,7 +128,7 @@ const CardFormulario = () => {
           </Form>
         </Card.Body>
       </Card>
-      <RowCards></RowCards>
+      <RowCards pacientes={formularios}></RowCards>
     </>
   );
 };

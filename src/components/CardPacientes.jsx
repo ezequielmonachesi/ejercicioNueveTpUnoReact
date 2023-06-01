@@ -1,25 +1,24 @@
 import { Button, Card, Col } from "react-bootstrap";
 
-const CardPacientes = ({ pacientes }) => {
+const CardPacientes = ({objeto}) => {
   return (
     <>
-      <Col xs md="3" key={i}>
-        <Card className="">
+      <Col xs md="3">
+        <Card className="h-100">
           <Card.Header>
-            <h6>Mascota: {e.nombre}</h6>
-            <p className="small m-0">Dueño: {e.duenio}</p>
+            <h6>Mascota: {objeto.nombre}</h6>
+            <p className="small m-0">Dueño: {objeto.duenio}</p>
           </Card.Header>
           <Card.Body>
-            <p>Fecha: {e.fecha}</p>
-            <p>Hora: {e.hora}</p>
-            <p>Sintomas: {e.sintoma}</p>
+            <p>Fecha: {objeto.fecha}</p>
+            <p>Hora: {objeto.hora}</p>
+            <p>Sintomas: {objeto.sintoma}</p>
           </Card.Body>
           <Card.Footer>
             <Button variant="danger">Borrar</Button>
           </Card.Footer>
         </Card>
       </Col>
-      ;
     </>
   );
 };

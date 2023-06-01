@@ -1,26 +1,27 @@
 import { Button, Card, Col } from "react-bootstrap";
 
-const CardPacientes = () => {
-    return (
-        <Col xs md="3">
+const CardPacientes = ({ pacientes }) => {
+  return (
+    <>
+      <Col xs md="3" key={i}>
         <Card className="">
-            <Card.Header>
-                <h6>Mascota: Pepe</h6>
-                <p className="small m-0">Dueño: Pedro</p>
-            </Card.Header>
-            <Card.Body>
-                <p>Fecha: 10/12</p>
-                <p>Hora: 10:00</p>
-                <p>Sintomas</p>
-            </Card.Body>
-            <Card.Footer>
-                <Button variant="danger">
-                    Borrar
-                </Button>
-            </Card.Footer>
+          <Card.Header>
+            <h6>Mascota: {e.nombre}</h6>
+            <p className="small m-0">Dueño: {e.duenio}</p>
+          </Card.Header>
+          <Card.Body>
+            <p>Fecha: {e.fecha}</p>
+            <p>Hora: {e.hora}</p>
+            <p>Sintomas: {e.sintoma}</p>
+          </Card.Body>
+          <Card.Footer>
+            <Button variant="danger">Borrar</Button>
+          </Card.Footer>
         </Card>
-        </Col>
-    );
+      </Col>
+      ;
+    </>
+  );
 };
 
 export default CardPacientes;

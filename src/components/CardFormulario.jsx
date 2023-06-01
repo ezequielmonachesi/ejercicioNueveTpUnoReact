@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Card, Form, Row } from "react-bootstrap";
+import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import CardPacientes from "./CardPacientes";
+import RowCards from "./RowCards";
 
 const CardFormulario = () => {
   const {
@@ -60,7 +60,7 @@ const CardFormulario = () => {
                     maxLength: 25,
                     minLength: 3,
                   })}
-                  placeholder="Ingrese su duenio"
+                  placeholder="Ingrese su dueño"
                 />
                 {errors.duenio?.type === "required" && (
                   <p className="text-danger small">* El campo es requerido.</p>
@@ -85,7 +85,7 @@ const CardFormulario = () => {
                     maxLength: 25,
                     minLength: 3,
                   })}
-                  placeholder="Ingrese su sintoma"
+                  placeholder="Ingrese su síntoma"
                 />
                 {errors.sintoma?.type === "required" && (
                   <p className="text-danger small">* El campo es requerido.</p>
@@ -107,10 +107,8 @@ const CardFormulario = () => {
                 <Form.Label>Fecha</Form.Label>
                 <Form.Control
                   type="date"
-                  {...register("hora", {
+                  {...register("fecha", {
                     required: true,
-                    maxLength: 25,
-                    minLength: 3,
                   })}
                 />
               </Form.Group>
@@ -120,8 +118,6 @@ const CardFormulario = () => {
                   type="time"
                   {...register("hora", {
                     required: true,
-                    maxLength: 25,
-                    minLength: 3,
                   })}
                 />
               </Form.Group>
@@ -132,9 +128,7 @@ const CardFormulario = () => {
           </Form>
         </Card.Body>
       </Card>
-      <Row className="gy-3 mt-3 justify-content-center">
-        <CardPacientes></CardPacientes>
-      </Row>
+      <RowCards></RowCards>
     </>
   );
 };

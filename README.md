@@ -3,7 +3,7 @@
 Ejercicio de turno de una veterinaria
 
 ▶️ Demo
-[Abrir Demo](https://formulariosdevalidaciones.netlify.app/) ✅
+[Abrir Demo](https://veterinariaturnador.netlify.app/) ✅
 
 ## Herramientas 🛠️
 

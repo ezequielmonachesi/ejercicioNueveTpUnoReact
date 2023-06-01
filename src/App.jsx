@@ -1,6 +1,7 @@
-import { Card, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CardFormulario from './components/CardFormulario';
 
 
 function App() {
@@ -9,9 +10,7 @@ function App() {
     <>
     <Container className='main'>
     <h1>Administrar pacientes de una veterinaria</h1>
-    <Card>
-      
-    </Card>
+      <CardFormulario></CardFormulario>
     </Container>  
     <footer className="bg-dark py-5 text-light text-center mt-5">
         <p>&copy; Todos los derechos reservaods.</p>
